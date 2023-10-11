@@ -24,7 +24,7 @@ class App extends React.Component {
       };
 
       return (
-        <div>
+        <div class="cocktail-card">
           <div className="cocktail-img" style={style}> </div>
           <h3>{hit.name}</h3>
         </div>
@@ -36,9 +36,7 @@ class App extends React.Component {
         <InstantSearch searchClient={searchClient} indexName="cocktails">
           <div className="search">  <SearchBox /> </div>
 
-          <div className="cocktails">
             <Hits hitComponent={Hit} />
-          </div>
         </InstantSearch>
       </div>
     );

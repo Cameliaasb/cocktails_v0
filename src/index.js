@@ -6,9 +6,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// my components
-import Hello from './components/hello'
-import Cocktail from './components/cocktail'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

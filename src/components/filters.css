@@ -9,10 +9,6 @@
     font-weight:            bold;
   }
 
-  .ais-RefinementList-labelText:checked {
-    font-weight:            bold;
-  }
-
   /* blocks to choose filter */
   .ais-RefinementList-list {
     display:                flex;
@@ -30,6 +26,5 @@
 }
 
 .filter-block {
-  width:                  calc(50% - 16px)
-
+  width:                  calc(50% - 16px)s
 }

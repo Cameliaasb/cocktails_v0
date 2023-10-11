@@ -5,13 +5,12 @@
 
 
 .search {
-  position:           sticky;
-  top:                0;
+
 }
 
 
 .cocktail-img {
-  height:              80%;
+  height:              60%;
   background-size:     cover;
   background-position: center;
 }
@@ -36,20 +35,27 @@ ol, ul {
 }
 
 .cocktail-card {
-  height:              300px;
+  height:              600px;
+  overflow:            scroll;
+  box-shadow:          0 0 5px rgba(0,0,0,0.2);
+  border-radius:       8px;
 }
 
+.cocktail-description {
+  padding:             8px;
+
+}
 
 /* For small screens (up to 768px), 2 cards per line */
 @media (max-width: 768px) {
   .ais-Hits-item {
-    flex-basis: calc(50% - 16px);
+    flex-basis:       calc(50% - 16px);
   }
 }
 
 /* For larger screens (above 768px), 4 cards per line */
 @media (min-width: 769px) {
   .ais-Hits-item {
-    flex-basis: calc(25% - 16px);
+    flex-basis:      calc(25% - 16px);
   }
 }

@@ -8,17 +8,15 @@ import { InstantSearch, SearchBox, Hits } from 'react-instantsearch';
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      cocktails: []
-    }
-  };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     cocktails: []
+  //   }
+  // };
 
   render() {
     const searchClient = algoliasearch('1BABPQ8ZYD', '8964a6a84d958d081b29b12090f152d9');
-
-    // const index = searchClient.initIndex('cocktails');
 
     function Hit({ hit }) {
       const style = {
@@ -26,12 +24,10 @@ class App extends React.Component {
       };
 
       return (
-        <article>
-          <div className="cocktail">
-            <h3>{hit.name}</h3>
-            <div className="cocktail-img" style={style}> </div>
-          </div>
-        </article>
+        <div>
+          <div className="cocktail-img" style={style}> </div>
+          <h3>{hit.name}</h3>
+        </div>
       );
     }
 

@@ -1,29 +1,33 @@
 .App {
-  text-align:     center;
-  margin:         16px 24px;
+  text-align:        center;
+  margin:            16px 24px;
 }
 
 
 .search {
-  position:       sticky;
-  top:            0;
+  position:           sticky;
+  top:                0;
 }
 
-.cocktails {
-  display:        flex;
-  flex-wrap:      wrap;
-  align-content:  flex-start;
-}
-
-
-.cocktail {
-  margin:              8px;
-  /* 2 cards per line */
-  flex-basis:          calc(50% - 16px);
-}
 
 .cocktail-img {
   height:              200px;
   background-size:     cover;
   background-position: center;
+}
+
+
+ol.ais-Hits-list {
+  list-style-type:    none;
+  padding:            0;
+  display:            flex;
+  flex-wrap:          wrap;
+  align-content:      flex-start;
+}
+
+.ais-Hits-item {
+  height:              300px;
+  margin:              8px;
+  /* 2 cards per line */
+  flex-basis:          calc(50% - 16px);
 }

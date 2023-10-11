@@ -43,7 +43,7 @@ ol, ul {
 
 .cocktail-description {
   padding:             8px;
-
+  text-align:          start;
 }
 
 /* For small screens (up to 768px), 2 cards per line */

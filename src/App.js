@@ -2,6 +2,10 @@ import './App.css';
 import './components/filters.css';
 import React, { Component } from 'react';
 
+// for images
+import { createClient } from 'pexels';
+
+
 // Algolia
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, RefinementList } from 'react-instantsearch';
@@ -9,15 +13,9 @@ import { InstantSearch, SearchBox, Hits, RefinementList } from 'react-instantsea
 
 class App extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     cocktails: []
-  //   }
-  // };
-
   render() {
     const searchClient = algoliasearch('1BABPQ8ZYD', '8964a6a84d958d081b29b12090f152d9');
+    const client = createClient('6L4gQD8vQT9THzsNsQRJ5c3O6uILNve9s0lsA69NpEwHPWRY9zpsq8CS');
 
     const transformItems = (items) => {
       return items.map((item) => ({
@@ -26,16 +24,26 @@ class App extends React.Component {
       }));
     };
 
+
+
     function Hit({ hit }) {
+
+      const cocktailName = hit.name ;
+      // client.photos.search({ query, per_page: 1 }).then(photos => console.log(photos["photos"][0].url));
+
+      // fetch(`https://www.google.com/search?sca_esv=572573644&sxsrf=AM9HkKlFPGBolRPXW9ZwpiAQSuLuTJegJw:1697045941501&q=${cocktailName}&tbm=isch&source=lnms&sa=X&ved=2ahUKEwjUr4rkxO6BAxWMTKQEHa9GCVQQ0pQJegQICRAB&biw=1680&bih=933&dpr=2`)
+      // .then(response => response.json())
+      // .then(data => console.log(data))
+
       const style = {
         backgroundImage: "url('https://images.unsplash.com/photo-1632739186171-b2a442047bcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2592&q=80)"
       };
 
       return (
-        <div class="cocktail-card">
+        <div className="cocktail-card">
           <div className="cocktail-img" style={style}> </div>
           <h3>{hit.name}</h3>
-          <div class="cocktail-description">
+          <div className="cocktail-description">
             {hit.ingredients.map((ingredient, index) => (
               <div key={index}>
                 {ingredient.amount} {ingredient.unit} {ingredient.ingredient}

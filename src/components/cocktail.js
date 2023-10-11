@@ -11,7 +11,7 @@ class Cocktail extends React.Component {
     return (
       <div className="cocktail">
         <div className="cocktail-img" style={style}> </div>
-        <div className="cocktail-name"> {name} </div>
+        <div className="cocktail-name"> <h3>{name}</h3> </div>
       </div>
 
     )

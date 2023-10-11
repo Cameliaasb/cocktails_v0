@@ -1,9 +1,10 @@
 import './App.css';
+import './components/filters.css';
 import React, { Component } from 'react';
 
 // Algolia
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch';
+import { InstantSearch, SearchBox, Hits, RefinementList } from 'react-instantsearch';
 
 
 class App extends React.Component {
@@ -34,9 +35,30 @@ class App extends React.Component {
     return (
       <div className="App">
         <InstantSearch searchClient={searchClient} indexName="cocktails">
-          <div className="search">  <SearchBox /> </div>
 
-            <Hits hitComponent={Hit} />
+          {/* Search bar */}
+          <div className="searchBar">
+            <SearchBox />
+          </div>
+
+          {/* Filters */}
+          <div className="filters">
+
+            <div className="filter-block">
+              <h3> Category</h3>
+              <RefinementList attribute="category" />
+            </div>
+
+            <div className="filter-block">
+              <h3> Glass</h3>
+              <RefinementList attribute="glass" />
+            </div>
+
+          </div>
+
+          {/* Results */}
+          <Hits hitComponent={Hit} />
+
         </InstantSearch>
       </div>
     );

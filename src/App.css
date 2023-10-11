@@ -17,14 +17,19 @@
 }
 
 
-ol.ais-Hits-list {
+ol, ul {
   list-style-type:    none;
   padding:            0;
+}
+
+/* Results grid  */
+.ais-Hits-list {
   display:            flex;
   flex-wrap:          wrap;
   align-content:      flex-start;
 }
 
+/* Each result item (cocktail) */
 .ais-Hits-item {
   height:              fit-content;
   margin:              8px;
@@ -33,6 +38,7 @@ ol.ais-Hits-list {
 .cocktail-card {
   height:              300px;
 }
+
 
 /* For small screens (up to 768px), 2 cards per line */
 @media (max-width: 768px) {

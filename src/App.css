@@ -35,7 +35,7 @@ ol, ul {
 }
 
 .cocktail-card {
-  height:              600px;
+  height:              300px;
   overflow:            scroll;
   box-shadow:          0 0 5px rgba(0,0,0,0.2);
   border-radius:       8px;

@@ -16,13 +16,9 @@ class App extends React.Component {
     const searchClient = algoliasearch('1BABPQ8ZYD', '8964a6a84d958d081b29b12090f152d9');
 
     // Glasses are in downcase and we want to display them correctly
-    // const transformItems = (items) => {
-    //   return items.map((item) => ({
-    //     ...item,
-    //     label: item.label.charAt(0).toUpperCase() + item.label.slice(1),
-    //   }));
-    // };
-
+    const transformItems = (item) => {
+      return item.charAt(0).toUpperCase() + item.slice(1)
+    };
 
 
     // ALGOLIA: hit = results
@@ -46,6 +42,7 @@ class App extends React.Component {
               ))} </div>
 
             <p> {hit.preparation} </p>
+            <p> <strong> Glass:</strong>  {transformItems(hit.glass)} </p>
 
           </div>
 
@@ -70,11 +67,6 @@ class App extends React.Component {
 
             {/* Filter by category */}
             <RefinementList attribute="category" sortBy={['count:desc', 'name:asc']} />
-
-
-            {/*
-              <RefinementList attribute="glass"   sortBy={['count:desc', 'name:asc']} transformItems={transformItems} />
-            */}
 
           </div>
 

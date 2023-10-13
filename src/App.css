@@ -2,17 +2,10 @@ body {
   background-color: #FFFBE0;
 }
 
-.App {
-  text-align:        center;
-  margin:            16px 24px;
+.container {
+  text-align:         center;
+  margin:             44px;
 }
-
-
-.search {
-
-}
-
-
 
 
 ol, .ais-RefinementList-list {
@@ -27,23 +20,26 @@ ol, .ais-RefinementList-list {
   align-content:      flex-start;
 }
 
+
+
+
 /* For small screens (up to 767px), 2 cards per line */
 @media (max-width: 767px) {
   .ais-Hits-item {
-    flex-basis: calc(50% - 16px);
+    flex-basis:       calc(50% - 16px);
   }
 }
 
 /* For medium screens (768px to 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .ais-Hits-item {
-    flex-basis: calc(33.333% - 16px);
+    flex-basis:       calc(33.333% - 16px);
   }
 }
 
 /* For large screens (992px and above) */
 @media (min-width: 992px) {
   .ais-Hits-item {
-    flex-basis: calc(25% - 16px);
+    flex-basis:       calc(25% - 16px);
   }
 }

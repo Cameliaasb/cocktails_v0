@@ -1,30 +1,49 @@
 /* Classes named by algolia search customized */
 
-  .ais-RefinementList-count {
-    background-color:     #d2d2d2;
-    color:                white;
-    margin-left:            8px;
-    padding:                0px 4px;
-    border-radius:          7px;
-    font-weight:            bold;
-  }
+.ais-RefinementList-count {
+  display:              none;
 
-  /* blocks to choose filter */
-  .ais-RefinementList-list {
-    display:                flex;
-    flex-wrap:              wrap;
-    gap:                    16px;
-  }
-
-
-/* Custom classes */
-
-.filters {
-  display:                  flex;
-  width:                    100%;
-  justify-content:          space-between;
+  /* if displayed => as a grey pill
+  background-color:     #d2d2d2;
+  color:                white;
+  margin-left:            8px;
+  padding:                0px 4px;
+  border-radius:          7px;
+  font-weight:            bold; */
 }
 
-.filter-block {
-  width:                  calc(50% - 16px)s
+input[type="checkbox" i], .ais-SearchBox-submit, .ais-SearchBox-reset {
+  display:              none;
+}
+
+.filters {
+  background-color:       #3EA66B;
+  padding:                44px;
+  display:                flex;
+  flex-direction:         column;
+  gap:                    32px;
+}
+
+
+/* blocks to choose filter => the filter block */
+.ais-RefinementList-list {
+  display:               flex;
+  flex-wrap:             wrap;
+  justify-content:       space-between;
+  gap:                   16px;
+}
+
+.ais-RefinementList-item {
+  padding:              1rem 0rem;
+}
+
+.ais-RefinementList-label {
+  background-color:     #FFFBE0;
+  padding:              1rem;
+  border:               1px solid black;
+  cursor:               pointer;
+}
+
+.ais-RefinementList-item--selected {
+  font-weight: bolder;
 }

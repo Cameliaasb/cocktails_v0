@@ -13,7 +13,7 @@
 .cocktail-description {
   padding:             16px;
   text-align:          start;
-  background-color:  #FEB0E1;
+  background-color:    hsl(242deg 40.12% 74.83%);
   overflow:            scroll;
   height:              200px;
   border:              1px solid black;

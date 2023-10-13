@@ -1,6 +1,7 @@
 import './App.css';
 import './components/filters.css';
 import './components/drinks.css';
+import './components/searchbar.css';
 import React, { Component } from 'react';
 
 
@@ -15,12 +16,12 @@ class App extends React.Component {
     const searchClient = algoliasearch('1BABPQ8ZYD', '8964a6a84d958d081b29b12090f152d9');
 
     // Glasses are in downcase and we want to display them correctly
-    const transformItems = (items) => {
-      return items.map((item) => ({
-        ...item,
-        label: item.label.charAt(0).toUpperCase() + item.label.slice(1),
-      }));
-    };
+    // const transformItems = (items) => {
+    //   return items.map((item) => ({
+    //     ...item,
+    //     label: item.label.charAt(0).toUpperCase() + item.label.slice(1),
+    //   }));
+    // };
 
 
 
@@ -55,32 +56,32 @@ class App extends React.Component {
 
 
     return (
-      <div className="App">
-        {/* Algolia InstantSearch from the cocktail index stored in algolia app */}
+      <div>
+      {/* Algolia InstantSearch from the cocktail index stored in algolia app */}
         <InstantSearch searchClient={searchClient} indexName="cocktails">
 
-          {/* Search bar */}
-          <div className="searchBar">
-            <SearchBox />
-          </div>
-
-          {/* Filters */}
           <div className="filters">
 
-            <div className="filter-block">
-              <h3> Category</h3>
-              <RefinementList attribute="category" sortBy={['count:desc', 'name:asc']} />
+            {/* Search bar */}
+            <div className="search-bar">
+              <div className="search-prompt yellow-bg"> SEARCH BY INGREDIENT </div>
+              <SearchBox />
             </div>
 
-            <div className="filter-block">
-              <h3> Glass</h3>
+            {/* Filter by category */}
+            <RefinementList attribute="category" sortBy={['count:desc', 'name:asc']} />
+
+
+            {/*
               <RefinementList attribute="glass"   sortBy={['count:desc', 'name:asc']} transformItems={transformItems} />
-            </div>
+            */}
 
           </div>
 
           {/* Results */}
-          <Hits hitComponent={Hit} />
+          <div className="container">
+            <Hits hitComponent={Hit} />
+          </div>
 
         </InstantSearch>
       </div>

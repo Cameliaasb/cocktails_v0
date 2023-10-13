@@ -1,3 +1,7 @@
+body {
+  background-color: #FFFBE0;
+}
+
 .App {
   text-align:        center;
   margin:            16px 24px;
@@ -9,14 +13,9 @@
 }
 
 
-.cocktail-img {
-  height:              60%;
-  background-size:     cover;
-  background-position: center;
-}
 
 
-ol, ul {
+ol, .ais-RefinementList-list {
   list-style-type:    none;
   padding:            0;
 }
@@ -28,34 +27,23 @@ ol, ul {
   align-content:      flex-start;
 }
 
-/* Each result item (cocktail) */
-.ais-Hits-item {
-  height:              fit-content;
-  margin:              8px;
-}
-
-.cocktail-card {
-  height:              300px;
-  overflow:            scroll;
-  box-shadow:          0 0 5px rgba(0,0,0,0.2);
-  border-radius:       8px;
-}
-
-.cocktail-description {
-  padding:             8px;
-  text-align:          start;
-}
-
-/* For small screens (up to 768px), 2 cards per line */
-@media (max-width: 768px) {
+/* For small screens (up to 767px), 2 cards per line */
+@media (max-width: 767px) {
   .ais-Hits-item {
-    flex-basis:       calc(50% - 16px);
+    flex-basis: calc(50% - 16px);
   }
 }
 
-/* For larger screens (above 768px), 4 cards per line */
-@media (min-width: 769px) {
+/* For medium screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
   .ais-Hits-item {
-    flex-basis:      calc(25% - 16px);
+    flex-basis: calc(33.333% - 16px);
+  }
+}
+
+/* For large screens (992px and above) */
+@media (min-width: 992px) {
+  .ais-Hits-item {
+    flex-basis: calc(25% - 16px);
   }
 }

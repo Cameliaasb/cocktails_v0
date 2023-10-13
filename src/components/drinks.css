@@ -1,0 +1,35 @@
+/* Each result item (cocktail) */
+.ais-Hits-item {
+  height:              fit-content;
+  margin:              8px;
+}
+
+.cocktail-card {
+  display:            flex;
+  flex-direction:     column;
+  gap:                8px;
+}
+
+.cocktail-description {
+  padding:             16px;
+  text-align:          start;
+  background-color:  #FEB0E1;
+  overflow:            scroll;
+  height:              200px;
+  border:              1px solid black;
+  font-size:           small;
+}
+
+
+.title-block {
+  font-size:          1.2rem;
+  font-weight:        bold;
+  height:             1.2rem;
+}
+
+
+.yellow-bg {
+  background-color:  #FFD83F;
+  border:             1px solid black;
+  padding:            8px;
+}

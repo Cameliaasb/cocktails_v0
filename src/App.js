@@ -1,5 +1,6 @@
 import './App.css';
 import './components/filters.css';
+import './components/drinks.css';
 import React, { Component } from 'react';
 
 
@@ -10,8 +11,10 @@ import { InstantSearch, SearchBox, Hits, RefinementList } from 'react-instantsea
 
 class App extends React.Component {
   render() {
+    // public tokens from algolia
     const searchClient = algoliasearch('1BABPQ8ZYD', '8964a6a84d958d081b29b12090f152d9');
 
+    // Glasses are in downcase and we want to display them correctly
     const transformItems = (items) => {
       return items.map((item) => ({
         ...item,
@@ -20,26 +23,40 @@ class App extends React.Component {
     };
 
 
+
+    // ALGOLIA: hit = results
     function Hit({ hit }) {
 
       return (
         <div className="cocktail-card">
-          <h3>{hit.name}</h3>
+
+          <div className="title-block yellow-bg"> {hit.name.toUpperCase()}</div>
+
           <div className="cocktail-description">
-            {hit.ingredients.map((ingredient, index) => (
-              <div key={index}>
-                {ingredient.amount} {ingredient.unit} {ingredient.ingredient}
-              </div>
-            ))}
+
+            <div> {hit.ingredients
+              // filter empty igredient lines
+              .filter(ingredient => ingredient.amount || ingredient.unit || ingredient.ingredient)
+              // display ingredients in a list
+              .map((ingredient, index) => (
+                <div key={index}>
+                  <strong> ∙ {ingredient.amount} {ingredient.unit} {ingredient.ingredient} </strong>
+                </div>
+              ))} </div>
+
             <p> {hit.preparation} </p>
 
           </div>
+
         </div>
       );
     }
 
+
+
     return (
       <div className="App">
+        {/* Algolia InstantSearch from the cocktail index stored in algolia app */}
         <InstantSearch searchClient={searchClient} indexName="cocktails">
 
           {/* Search bar */}

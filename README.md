@@ -1,3 +1,4 @@
+## Work in progress
 ⚠️ Cocktails is a work in progress, and many features are not implemented yet.
 
 
@@ -15,7 +16,7 @@ This portfolio project is a cocktail database web application created using Crea
 
 ## Screenshots
 
-![screenshot](app/assets/images/screenshot.png?raw=true "App screenshot")
+![screenshot](/public/screenshot.png)
 
 
 ## Installation

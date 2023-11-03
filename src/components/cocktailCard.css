@@ -1,8 +1,4 @@
 /* Each result item (cocktail) */
-.ais-Hits-item {
-  height:              fit-content;
-  margin:              8px;
-}
 
 .cocktail-card {
   display:            flex;
@@ -33,3 +29,13 @@
   border:             1px solid black;
   padding:            8px;
 }
+
+
+/* ------------ overriding algolia search default ------------------ */
+
+.ais-Hits-item {
+  height:              fit-content;
+  margin:              8px;
+}
+
+/* ---------------------------------------------------------------- */

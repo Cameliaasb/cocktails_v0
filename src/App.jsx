@@ -1,14 +1,15 @@
 import './App.css';
 import './components/filters.css';
-import './components/drinks.css';
+import './components/cocktailCard.css';
 import './components/searchbar.css';
 import React, { Component } from 'react';
+import CocktailCard from './components/cocktailCard';
 
 
 // Algolia
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits, RefinementList } from 'react-instantsearch';
-import CocktailCard from './components/cocktailCard';
+import { InstantSearch, Hits } from 'react-instantsearch';
+import Filters from './components/filters';
 
 
 class App extends Component {
@@ -18,21 +19,11 @@ class App extends Component {
 
     return (
       <div>
-      {/* Algolia InstantSearch from the cocktail index stored in algolia app */}
+        {/* Algolia InstantSearch from the cocktail index stored in algolia app */}
         <InstantSearch searchClient={searchClient} indexName="cocktails">
 
-          <div className="filters">
-
-            {/* Search bar */}
-            <div className="search-bar">
-              <div className="search-prompt yellow-bg"> SEARCH BY INGREDIENT </div>
-              <SearchBox />
-            </div>
-
-            {/* Filter by category */}
-            <RefinementList attribute="category" sortBy={['count:desc', 'name:asc']} />
-
-          </div>
+        {/* Search bar and filters to click on */}
+        <Filters />
 
           {/* Results */}
           <div className="container">

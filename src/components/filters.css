@@ -1,21 +1,3 @@
-/* Classes named by algolia search customized */
-
-.ais-RefinementList-count {
-  display:              none;
-
-  /* if displayed => as a grey pill
-  background-color:     #d2d2d2;
-  color:                white;
-  margin-left:            8px;
-  padding:                0px 4px;
-  border-radius:          7px;
-  font-weight:            bold; */
-}
-
-input[type="checkbox" i], .ais-SearchBox-submit, .ais-SearchBox-reset {
-  display:              none;
-}
-
 .filters {
   background-color:       #3EA66B;
   padding:                44px;
@@ -25,7 +7,19 @@ input[type="checkbox" i], .ais-SearchBox-submit, .ais-SearchBox-reset {
 }
 
 
-/* blocks to choose filter => the filter block */
+/* ------------ overriding algolia search default ------------------ */
+
+/* for searchbar */
+.ais-RefinementList-count {
+  display:              none;
+}
+
+input[type="checkbox" i], .ais-SearchBox-submit, .ais-SearchBox-reset {
+  display:              none;
+}
+
+
+/* for blocks to choose filter */
 .ais-RefinementList-list {
   display:               flex;
   flex-wrap:             wrap;
@@ -47,3 +41,5 @@ input[type="checkbox" i], .ais-SearchBox-submit, .ais-SearchBox-reset {
 .ais-RefinementList-item--selected {
   font-weight: bolder;
 }
+
+/* ---------------------------------------------------------------- */

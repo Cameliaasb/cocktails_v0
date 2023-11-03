@@ -14,6 +14,8 @@
   width:                fit-content;
 }
 
+
+/* ------------ overriding algolia search default ------------------ */
 .ais-SearchBox {
   flex-grow:            1;
 }
@@ -26,3 +28,4 @@
   padding:              8px;
   width:                100%;
 }
+/* ---------------------------------------------------------------- */
